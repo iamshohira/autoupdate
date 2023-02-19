@@ -17,7 +17,7 @@ with request.urlopen(git_dl_url) as df:
         f.write(data)
 
 with ZipFile(path_zip) as zp:
-    zp.extractall()
+    zp.extractall(parent_dir)
 
 shutil.rmtree(exe_dir)
 shutil.move(path_extract, exe_dir)
